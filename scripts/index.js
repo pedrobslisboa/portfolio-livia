@@ -16,8 +16,11 @@ let photos = [{src:'1.jpg',album:'',cards:''},
 {src:'4.jpg',album:{name:'album-1',
 photosAlbum:['1.jpg','2.jpg','3.jpg']},cards:cards,number:''},
 {src:'3.jpg',album:'',cards:'',number:''},{src:'4.jpg',album:'',cards:'',number:''},{src:'5.jpg',album:{ name:'album-1',
-photosAlbum:['3.jpg','5.jpg','4.jpg']},cards:'',number:''},{src:'4.jpg',album:{name:'album-1',
-photosAlbum:['1.jpg','2.jpg','3.jpg']},cards:cards,number:''}];
+photosAlbum:['3.jpg','5.jpg','4.jpg']},cards:'',number:''},{src:'4.jpg',cards:,number:''},{src:'1.jpg',album:'',cards:''},
+{src:'4.jpg',album:{name:'album-1',
+photosAlbum:['1.jpg','2.jpg','3.jpg']},cards:cards,number:''},
+{src:'3.jpg',album:'',cards:'',number:''},{src:'4.jpg',album:'',cards:'',number:''},{src:'5.jpg',album:{ name:'album-1',
+photosAlbum:['3.jpg','5.jpg','4.jpg']},cards:'',number:''},{src:'4.jpg',cards:,number:''}];
 
 
 let body = $("body");
