@@ -56,6 +56,7 @@ for(var i=0;i<photos.length;i++){
 
 
 $(document).ready(function() {
+ $('#body').show();
 main.fadeIn();
 controller.onClickPhoto();
 });
