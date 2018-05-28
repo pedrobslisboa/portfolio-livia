@@ -45,6 +45,7 @@ let albumToShow = $('.album-to-show');
 let main =$('main');
 let dots = $('.dot');
 
+console.log();
 
 function fixNav(){
   var top = this.scrollY;
@@ -66,12 +67,109 @@ for(var i=0;i<photos.length;i++){
   controller.add(photos[i].src,photos[i].cards,photos[i].album);
 }
 
+$('.link-about').click(function() {
+
+  $('html').animate({
+    scrollTop: '0'
+  });
+
+  if($('.link-about').text() == 'about'){
+    if($('.link-contact').text() == 'home'){
+      $('.link-contact').fadeOut(function() {
+        $('.link-contact').text('contact').fadeIn();
+      });
+      $('.contact').fadeOut(function() {
+        $('.about').fadeIn();
+      });
+      $('.link-about').fadeOut(function() {
+        $('.link-about').text('home').fadeIn();
+      });
+    } else {
+      $('.name-work').fadeOut(function() {
+        $('.about').fadeIn();
+      });
+      $('.link-about').fadeOut(function() {
+        $('.link-about').text('home').fadeIn();
+      });
+    }
+    if($(window).width() < 900){
+      $('.home').animate({
+        height: '400'
+      });
+    }
+
+  } else{
+    if($(window).width() < 900){
+      $('.home').animate({
+        height: '200'
+      });
+    }
+    $('.about').fadeOut(function() {
+      $('.name-work').fadeIn();
+    });
+    $('.link-about').fadeOut(function() {
+      $('.link-about').text('about').fadeIn();
+    });
+  }
+
+
+});
+
+$('.link-contact').click(function() {
+
+  $('.home').animate({
+    height: '200'
+  });
+
+  $('html').animate({
+    scrollTop: '0'
+  });
+
+    if($('.link-contact').text() == 'contact'){
+
+      if($('.link-about').text() == 'home'){
+        $('.link-about').fadeOut(function() {
+          $('.link-about').text('about').fadeIn();
+        });
+      $('.link-contact').fadeOut(function() {
+        $('.link-contact').text('home').fadeIn();
+      });
+
+      $('.about').fadeOut(function() {
+        $('.contact').fadeIn();
+      });
+  } else{
+    $('.link-contact').fadeOut(function() {
+      $('.link-contact').text('home').fadeIn();
+    });
+
+    $('.name-work').fadeOut(function() {
+      $('.contact').fadeIn();
+    });
+  }
+}else{
+  $('.contact').fadeOut(function() {
+    $('.name-work').fadeIn();
+  });
+  $('.link-contact').fadeOut(function() {
+    $('.link-contact').text('contact').fadeIn();
+  });
+  }
+
+});
+
+$('.link-portfolio').click(function() {
+  $('html').animate({
+    scrollTop: $('.home').height()
+  });
+
+});
 
 
 
 
 $(document).ready(function() {
- $('#body').show();
+  $('#body').show();
 main.fadeIn();
 controller.onClickPhoto();
 });
